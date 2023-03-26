@@ -120,5 +120,7 @@
         public static int Determinant(Matrix2D matrix) => matrix.A*matrix.D-matrix.B*matrix.C; // class method of Determinant function
 
         public int Det() => this.A * this.D - this.B * this.C; // instance method of Determinant function
+
+        public static int[,] ToIntArray(Matrix2D matrix) => new int[2, 2] { { matrix.A, matrix.B }, { matrix.C, matrix.D } };
     }
 }

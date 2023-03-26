@@ -13,5 +13,6 @@ Console.WriteLine(-m);
 Console.WriteLine(Matrix2D.Transpose(m));
 Console.WriteLine(Matrix2D.Determinant(m));
 Console.WriteLine(m.Det());
+Console.WriteLine(Matrix2D.ToIntArray(m));
 //Console.Write("Press enter to exit");
 //Console.Read();
