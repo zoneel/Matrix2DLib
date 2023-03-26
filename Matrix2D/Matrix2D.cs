@@ -41,6 +41,10 @@
 
         public override int GetHashCode() => HashCode.Combine(A, B, C, D); //its required by collections to effectively manage data.
 
+        public static bool operator==(Matrix2D left, Matrix2D right) //overrides == operator (checks if left side is equal to right)
+        {
+            return left.Equals(right);
+        }
 
     }
 }
