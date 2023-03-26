@@ -106,7 +106,16 @@
             return output;
         }
 
+        public static Matrix2D operator -(Matrix2D matrix)
+        {
+            int outA = matrix.A * (-1);
+            int outB = matrix.B * (-1);
+            int outC = matrix.C * (-1);
+            int outD = matrix.D * (-1);
+            Matrix2D output = new Matrix2D(outA, outB, outC, outD);
 
+            return output;
+        }
 
 
     }
