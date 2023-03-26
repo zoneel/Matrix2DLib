@@ -1,4 +1,6 @@
-﻿namespace Matrix2DLib
+﻿using System.Text.RegularExpressions;
+
+namespace Matrix2DLib
 {
     public class Matrix2D : IEquatable<Matrix2D>
     {
@@ -121,6 +123,23 @@
 
         public int Det() => this.A * this.D - this.B * this.C; // instance method of Determinant function
 
-        public static int[,] ToIntArray(Matrix2D matrix) => new int[2, 2] { { matrix.A, matrix.B }, { matrix.C, matrix.D } };
+        public static int[,] ToIntArray(string matrix){
+            Regex regex = new Regex(@"^\[\[(\d+), (\d+)\], \[(\d+), (\d+)\]\]$");
+            Match match = regex.Match(matrix);
+            if (match.Success)
+            {
+                int a = int.Parse(match.Groups[1].Value);
+                int b = int.Parse(match.Groups[2].Value);
+                int c = int.Parse(match.Groups[3].Value);
+                int d = int.Parse(match.Groups[4].Value);
+                Console.WriteLine($"A: {a}, B: {b}, C: {c}, D: {d}");
+                return new int[2, 2] { { a, b }, { c, d } };
+
+            }
+            else
+            {
+                throw new FormatException("Invalid format");
+            }
+        }
     }
 }
