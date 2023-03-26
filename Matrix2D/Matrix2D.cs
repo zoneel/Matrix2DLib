@@ -39,10 +39,8 @@
             return Equals(obj as Matrix2D); //or by casting (Matrix2D)obj
         }
 
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => HashCode.Combine(A, B, C, D); //its required by collections to effectively manage data.
+
 
     }
 }
