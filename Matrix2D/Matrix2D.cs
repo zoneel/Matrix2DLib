@@ -62,6 +62,28 @@
             return output;
         }
 
+        public static Matrix2D operator -(Matrix2D matrix1, Matrix2D matrix2)
+        {
+            int outA = matrix1.A - matrix2.A;
+            int outB = matrix1.B - matrix2.B;
+            int outC = matrix1.C - matrix2.C;
+            int outD = matrix1.D - matrix2.D;
+            Matrix2D output = new Matrix2D(outA, outB, outC, outD);
+
+            return output;
+        }
+
+        public static Matrix2D operator *(Matrix2D matrix1, Matrix2D matrix2)
+        {
+            int outA = (matrix1.A * matrix2.A) +(matrix1.B * matrix2.C);
+            int outB = (matrix1.A * matrix2.B) +(matrix1.B * matrix2.D);
+            int outC = (matrix1.C * matrix2.A) +(matrix1.D * matrix2.C);
+            int outD = (matrix1.C * matrix2.B) +(matrix1.D * matrix2.D);
+            Matrix2D output = new Matrix2D(outA, outB, outC, outD);
+
+            return output;
+        }
+
 
 
     }
