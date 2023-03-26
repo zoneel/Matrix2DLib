@@ -84,6 +84,29 @@
             return output;
         }
 
+        public static Matrix2D operator *(int num, Matrix2D matrix2) //lefthand multiplication by int
+        {
+            int outA = num * matrix2.A;
+            int outB = num * matrix2.B;
+            int outC = num * matrix2.C;
+            int outD = num * matrix2.D;
+            Matrix2D output = new Matrix2D(outA, outB, outC, outD);
+
+            return output;
+        }
+
+        public static Matrix2D operator *(Matrix2D matrix2, int num) //righthand multiplication by int
+        {
+            int outA = num * matrix2.A;
+            int outB = num * matrix2.B;
+            int outC = num * matrix2.C;
+            int outD = num * matrix2.D;
+            Matrix2D output = new Matrix2D(outA, outB, outC, outD);
+
+            return output;
+        }
+
+
 
 
     }

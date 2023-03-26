@@ -7,5 +7,6 @@ Console.WriteLine(m == p);
 Console.WriteLine(m + p);
 Console.WriteLine(m - p);
 Console.WriteLine(m * p);
-Console.Write("Press enter to exit");
-Console.Read();
+Console.WriteLine(3 * p);
+//Console.Write("Press enter to exit");
+//Console.Read();
