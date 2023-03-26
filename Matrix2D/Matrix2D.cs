@@ -51,7 +51,7 @@
             return !left.Equals(right);
         }
 
-        public static Matrix2D operator +(Matrix2D matrix1, Matrix2D matrix2)
+        public static Matrix2D operator +(Matrix2D matrix1, Matrix2D matrix2) //overrides + operator
         {
             int outA = matrix1.A + matrix2.A;
             int outB = matrix1.B + matrix2.B;
@@ -62,7 +62,7 @@
             return output;
         }
 
-        public static Matrix2D operator -(Matrix2D matrix1, Matrix2D matrix2)
+        public static Matrix2D operator -(Matrix2D matrix1, Matrix2D matrix2) //overrides - operator
         {
             int outA = matrix1.A - matrix2.A;
             int outB = matrix1.B - matrix2.B;
@@ -73,7 +73,7 @@
             return output;
         }
 
-        public static Matrix2D operator *(Matrix2D matrix1, Matrix2D matrix2)
+        public static Matrix2D operator *(Matrix2D matrix1, Matrix2D matrix2)//overrides * operator
         {
             int outA = (matrix1.A * matrix2.A) +(matrix1.B * matrix2.C);
             int outB = (matrix1.A * matrix2.B) +(matrix1.B * matrix2.D);
@@ -101,9 +101,8 @@
             int outB = num * matrix2.B;
             int outC = num * matrix2.C;
             int outD = num * matrix2.D;
-            Matrix2D output = new Matrix2D(outA, outB, outC, outD);
-
-            return output;
+            //Matrix2D output = new Matrix2D(outA, outB, outC, outD);
+            return new Matrix2D(outA, outB, outC, outD);
         }
 
         public static Matrix2D operator -(Matrix2D matrix)
@@ -112,11 +111,14 @@
             int outB = matrix.B * (-1);
             int outC = matrix.C * (-1);
             int outD = matrix.D * (-1);
-            Matrix2D output = new Matrix2D(outA, outB, outC, outD);
-
-            return output;
+            //Matrix2D output = new Matrix2D(outA, outB, outC, outD);
+            return new Matrix2D(outA, outB, outC, outD);
         }
 
+        public static Matrix2D Transpose(Matrix2D matrix) => new Matrix2D(matrix.D, matrix.C, matrix.B, matrix.A);
 
+        public static int Determinant(Matrix2D matrix) => matrix.A*matrix.D-matrix.B*matrix.C; // class method of Determinant function
+
+        public int Det() => this.A * this.D - this.B * this.C; // instance method of Determinant function
     }
 }
