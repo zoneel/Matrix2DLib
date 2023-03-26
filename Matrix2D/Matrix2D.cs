@@ -24,7 +24,7 @@
 
         public bool Equals(Matrix2D? other)
         {
-            if(other == null) return false;
+            if(other is null) return false; //is operator is available after C# 8
             if(ReferenceEquals(this, other)) return true;
 
             return A == other.A && B == other.B && C == other.C && D == other.D;
@@ -45,6 +45,14 @@
         {
             return left.Equals(right);
         }
+
+        public static bool operator !=(Matrix2D left, Matrix2D right) //overrides != operator (checks if left side is not equal to right)
+        {
+            return !left.Equals(right);
+        }
+
+
+
 
     }
 }
