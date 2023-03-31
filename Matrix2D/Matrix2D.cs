@@ -117,7 +117,7 @@ namespace Matrix2DLib
             return new Matrix2D(outA, outB, outC, outD);
         }
 
-        public static Matrix2D Transpose(Matrix2D matrix) => new Matrix2D(matrix.D, matrix.C, matrix.B, matrix.A);
+        public static Matrix2D Transpose(Matrix2D matrix) => new Matrix2D(matrix.A, matrix.C, matrix.B, matrix.D); //transpose this matrix
 
         public static int Determinant(Matrix2D matrix) => matrix.A*matrix.D-matrix.B*matrix.C; // class method of Determinant function
 
